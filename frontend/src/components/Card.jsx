@@ -2,7 +2,7 @@ import React from "react";
 
 const OfferCards = () => {
   return (
-    <div className="px-4 md:px-16 lg:px-28 mt-6 bg-gray-100">
+    <div className="px-4 md:px-16 lg:px-16 mt-8 bg-gray-100">
       <div className="bg-white shadow-xl rounded-3xl items-center px-6 md:px-12 lg:px-16 py-6 md:py-8">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary font-montserrat mb-2 text-center lg:text-left">
           What we offer?

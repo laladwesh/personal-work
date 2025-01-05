@@ -24,6 +24,9 @@ const AddressPage = () => {
   const location = useLocation();
   const userContext = useContext(UserContext);
 
+  useEffect(() => {
+    order.setOrdAddress(selectedAddress);
+  }, [selectedAddress]);
   const handleError = () => {
     toast.error(error, {
       position: "top-right",

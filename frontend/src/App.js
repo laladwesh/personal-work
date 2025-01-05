@@ -7,6 +7,8 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
 //import VerificationPage from "./pages/VerificationPage";
+import PrivateRoute from "./components/PrivateRoute";
+import OrderRoute from "./components/OrderRoute";
 import SignInPage from "./pages/SignInPage";
 import AccountPage from "./pages/AccountPage";
 import OrderHistoryPage from "./pages/OrderHistoryPage";
@@ -14,6 +16,7 @@ import ServicePage from "./pages/ServicePage";
 import PricePage from "./pages/PricePage";
 import AddressPage from "./pages/AddressPage";
 import PaymentPage from "./pages/PaymentPage";
+import ConfirmPage from "./pages/ConfirmPage";
 
 function App() {
   return (
@@ -24,14 +27,58 @@ function App() {
         <Route path="/allservices" element={<AllServicePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/sign-up" element={<LoginPage/>} />
-        <Route path="/sign-in" element={<SignInPage/>} />
-        <Route path="/my-acc" element={<AccountPage/>} />
-        <Route path="/order-his" element={<OrderHistoryPage/>} />
-        <Route path="/service/:id" element={<ServicePage/>} />
-        <Route path="/price" element={<PricePage/>} />
-        <Route path="/address" element={<AddressPage />} />
-        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/sign-up" element={<LoginPage />} />
+        <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/service/:id" element={<ServicePage />} />
+        <Route
+          path="/my-acc"
+          element={
+            <PrivateRoute>
+              <AccountPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/order-his"
+          element={
+            <PrivateRoute>
+              <OrderHistoryPage />
+            </PrivateRoute>
+          }
+        />
+        
+        <Route
+          path="/price"
+          element={
+            <OrderRoute>
+              <PricePage />
+            </OrderRoute>
+          }
+        />
+        <Route
+          path="/address"
+          element={
+            <OrderRoute>
+              <AddressPage />
+            </OrderRoute>
+          }
+        />
+        <Route
+          path="/payment"
+          element={
+            <OrderRoute>
+              <PaymentPage />
+            </OrderRoute>
+          }
+        />
+        <Route
+          path="/confirm"
+          element={
+            <OrderRoute>
+              <ConfirmPage />
+            </OrderRoute>
+          }
+        />
       </Routes>
       <Footer />
     </div>

@@ -12,6 +12,7 @@ router.post('/getaddress', authController.getAddress);
 router.post('/addaddress', authController.addAddress);
 router.get("/services/:id", authController.getServiceById);
 router.get("/materials/:id/:category", authController.getMaterialsByCategory);
+router.post("/new-order", authController.newOrder);
 
 
   

@@ -11,7 +11,7 @@ const Navbar = () => {
         className={`min-h-[12vh] w-full bg-white rounded-lg shadow-md flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 py-3 sm:py-4`}
       >
         {/* Logo */}
-        <div className="h-6 w-16 sm:w-20 bg-gray-300 rounded mb-4 sm:mb-0"></div>
+        <a href="/"><div className="h-6 w-16 sm:w-20 bg-gray-300 rounded mb-4 sm:mb-0"></div></a>
 
         {/* Links */}
         <div className="font-montserrat flex flex-col sm:flex-row sm:space-x-6 text-gray-600 text-center sm:text-left space-y-3 sm:space-y-0">

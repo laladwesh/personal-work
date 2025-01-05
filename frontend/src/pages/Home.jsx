@@ -1,52 +1,56 @@
-import React, { useEffect } from "react";
-//import Navbar from "../components/Navbar";
+import React, { useRef } from "react";
 import OfferCards from "../components/Card";
 import { useOrder } from "../context/order";
-//import Footer from "../components/Footer";
 
 const Home = () => {
   const { order } = useOrder();
+  const offerCardsRef = useRef(null);  
 
-  // useEffect(() => {
-   console.log("Current Order in Home:", order);
-  // }, [order]);
+  console.log("Current Order in Home:", order);
 
+  const handleScrollToOffers = () => {
+    if (offerCardsRef.current) {
+      offerCardsRef.current.scrollIntoView({ behavior: "smooth" });  
+    }
+  };
 
   return (
     <div className="bg-gray-100">
-      <div class="flex items-center justify-center min-h-[90vh] font-montserrat bg-gray-100 px-14">
-        {/* <!-- Wrapper for the entire component --> */}
-        <div class="w-full h-[100vh] flex px-16 space-x-11 p-2  ">
-          {/* <!-- Left Section --> */}
-          <div class="w-[50vw] h-full bg-white p-16 shadow-lg flex flex-col justify-between rounded-xl">
-            {/* <!-- Text Section --> */}
+      <div className="flex items-center justify-center min-h-[90vh] font-montserrat bg-gray-100 px-6 lg:px-14">
+        {/* Wrapper for the entire component */}
+        <div className="w-full h-auto lg:h-[100vh] flex flex-col lg:flex-row px-6 lg:px-16 space-y-6 lg:space-y-0 lg:space-x-11">
+          {/* Left Section */}
+          <div className="w-full lg:w-[50%] bg-white p-8 lg:p-16 shadow-lg flex flex-col justify-between rounded-2xl">
+            {/* Text Section */}
             <div>
-              <div class="text-[#1a0066] text-[44px] font-bold font-['Montserrat'] leading-[60px]">
+              <h1 className="text-[#1a0066] text-2xl sm:text-4xl lg:text-[44px] font-bold leading-tight lg:leading-[60px]">
                 Prints So Fine, <br />
                 Prices So Low. <br />
                 Your Perfect Printing Partner.
-              </div>
-              <div class="mt-10">
-                <div class="text-black text-2xl font-semibold font-['Montserrat'] leading-normal">
+              </h1>
+              <div className="mt-6 lg:mt-10 space-y-3">
+                <p className="text-black text-lg sm:text-xl lg:text-2xl font-semibold">
                   Guaranteed low prices
-                </div>
-                <div class="text-black text-2xl font-semibold font-['Montserrat'] leading-normal mt-2">
+                </p>
+                <p className="text-black text-lg sm:text-xl lg:text-2xl font-semibold">
                   Exceptional quality
-                </div>
-                <div class="text-black text-2xl font-semibold font-['Montserrat'] leading-normal mt-2">
+                </p>
+                <p className="text-black text-lg sm:text-xl lg:text-2xl font-semibold">
                   Professional Support
-                </div>
+                </p>
               </div>
             </div>
 
-            {/* <!-- Button Section --> */}
-            <div class="px-24 py-8 bg-[#5230b2] rounded-3xl justify-center items-center gap-2 inline-flex">
-              <div class="flex items-center gap-4">
-                {/* <!-- Icon --> */}
-                <div class="w-[59px] h-[60px] relative">
+            {/* Button Section */}
+            <div className="mt-6 w-full lg:mt-12 flex justify-center">
+              <button
+                onClick={handleScrollToOffers}  
+                className="px-4 py-4 w-full bg-[#5230b2] rounded-3xl flex items-center justify-center gap-4 text-white text-lg sm:text-2xl lg:text-[32px] font-bold"
+              >
+                <div className="w-10 h-16 lg:w-[59px] lg:h-[60px]">
                   <svg
-                    width="59"
-                    height="61"
+                    width="100%"
+                    height="100%"
                     viewBox="0 0 59 61"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +63,7 @@ const Home = () => {
                         height="38.0743"
                         transform="matrix(0.70114 0.713024 -0.70114 0.713024 31.4997 1.31848)"
                         stroke="#F5F5F5"
-                        stroke-width="4"
+                        strokeWidth="4"
                       />
                       <line
                         id="Line 3"
@@ -68,34 +72,31 @@ const Home = () => {
                         x2="29.8477"
                         y2="41.2462"
                         stroke="#F5F5F5"
-                        stroke-width="4"
+                        strokeWidth="4"
                       />
                     </g>
                   </svg>
                 </div>
-                {/* <!-- Button Text --> */}
-                <div class="text-[#f4f4f4] text-[32px] font-bold font-['Montserrat']">
-                  Start printing
-                </div>
-              </div>
+                Start Printing
+              </button>
             </div>
           </div>
 
-          {/* <!-- Divider --> */}
-
-          {/* <!-- Right Section --> */}
-          <div class="w-[50vw] h-full flex bg-white items-center shadow-lg rounded-xl justify-center p-16">
-            {/* <!-- Replace this placeholder with your image --> */}
+          {/* Right Section */}
+          <div className="w-full lg:w-[50%] flex items-center justify-center bg-white shadow-lg rounded-2xl p-8 lg:p-16">
             <img
               src="doodle.png"
               alt="Doodles illustration"
-              class="w-full h-auto object-contain"
+              className="w-full h-full object-contain rounded-xl"
             />
           </div>
         </div>
       </div>
-      <OfferCards/>
-      
+
+      {/* Offer Cards Section */}
+      <div ref={offerCardsRef} className="px-4 sm:px-8 lg:px-14"> {/* Ref added here */}
+        <OfferCards />
+      </div>
     </div>
   );
 };

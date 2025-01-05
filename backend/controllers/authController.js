@@ -6,6 +6,7 @@ const User = require('../models/userModel');
 const OTP = require('../models/otpModel');
 const Address = require('../models/addressModel');
 const Service = require('../models/serviceModel');
+const Order = require('../models/orderModel');
 
 exports.signup = async (req, res) => {
   try {
@@ -363,5 +364,43 @@ exports.getMaterialsByCategory = async (req, res) => {
       message: "An error occurred while fetching materials.",
       error: error.message,
     });
+  }
+}
+exports.newOrder = async (req, res) => {
+  try {
+    const { user, orderDetails, ordAddress, serviceName } = req.body;
+
+    // Fetch the address from the database using the address ID
+    const address = await Address.findOne({ _id: ordAddress });
+    const useri = await User.findOne({ email: user.email });
+
+    if (!address) {
+      return res.status(404).json({ message: "Address not found." });
+    }
+
+    let totalPrice = 0;
+    if (orderDetails) {
+      Object.values(orderDetails).forEach((item) => {
+        if (item.price) {
+          totalPrice += item.price;
+        }
+      });
+    }
+
+    // Create the new order
+    const newOrder = new Order({
+      user:useri, // Associate the order with the user
+      orderDetails,
+      address, // Use the fetched address
+      service: serviceName, // Save the service name
+      totalPrice,
+    });
+
+    const savedOrder = await newOrder.save();
+
+    res.status(201).json({ success: true, orderId: savedOrder._id });
+  } catch (error) {
+    console.error("Error creating order:", error);
+    res.status(500).json({ message: "Internal server error." });
   }
 }
