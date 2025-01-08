@@ -1,14 +1,14 @@
 // controllers/authController.js
 
 
-const bcrypt = require('bcrypt');
-const User = require('../models/userModel');
-const OTP = require('../models/otpModel');
-const Address = require('../models/addressModel');
-const Service = require('../models/serviceModel');
-const Order = require('../models/orderModel');
+import bcrypt from 'bcrypt';
+import User from '../models/userModel.js';
+import OTP from '../models/otpModel.js';
+import Address from '../models/addressModel.js';
+import Service from '../models/serviceModel.js';
+import Order from '../models/orderModel.js';
 
-exports.signup = async (req, res) => {
+export const signup = async (req, res) => {
   try {
     const { email ,  otp } = req.body;
     // Validate request body
@@ -58,7 +58,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-exports.signin = async (req, res) => {
+export const signin = async (req, res) => {
   try {
     const { email, password } = req.body;
     // Check if all details are provided
@@ -94,7 +94,7 @@ exports.signin = async (req, res) => {
   } catch (error) {}
 };
 
-exports.updateUser = async (req, res) => {
+export const updateUser = async (req, res) => {
   const { email, firstName, lastName, phone, company, state, pincode } = req.body;
 
   try {
@@ -115,7 +115,7 @@ exports.updateUser = async (req, res) => {
   }
 };
 
-exports.loginotp = async (req, res) => {
+export const loginotp = async (req, res) => {
   try {
     const { email, otp } = req.body;
 
@@ -181,7 +181,7 @@ exports.loginotp = async (req, res) => {
   }
 };
 
-exports.getAddress = async (req, res) => {
+export const getAddress = async (req, res) => {
   try {
     const { email } = req.body;
 
@@ -229,7 +229,7 @@ exports.getAddress = async (req, res) => {
 };
 
 
-exports.addAddress = async (req, res) => {
+export const addAddress = async (req, res) => {
   try {
     const {
       email,
@@ -293,7 +293,7 @@ exports.addAddress = async (req, res) => {
     });
   }
 };
-exports.getServiceById = async (req, res) => {
+export const getServiceById = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -321,7 +321,7 @@ exports.getServiceById = async (req, res) => {
     });
   }
 }
-exports.getMaterialsByCategory = async (req, res) => {
+export const getMaterialsByCategory = async (req, res) => {
   try {
     const { id, category } = req.params;
 
@@ -366,7 +366,7 @@ exports.getMaterialsByCategory = async (req, res) => {
     });
   }
 }
-exports.newOrder = async (req, res) => {
+export const newOrder = async (req, res) => {
   try {
     const { user, orderDetails, ordAddress, serviceName } = req.body;
 

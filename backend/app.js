@@ -1,32 +1,39 @@
-const express = require('express')
-require('dotenv').config()
-const app = express()
-const cors = require('cors');
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import { admin, adminRouter } from './admin_panel/admin-config.js';
+import { connect } from './config/database.js';
+import userRoutes from './routes/otpRoute.js';
+import authRoutes from './routes/authRoute.js';
+
+dotenv.config();
+
+const app = express();
 
 // CORS configuration
 const corsOptions = {
   origin: 'http://localhost:3000', // Replace with your frontend's origin
-  methods: ['GET', 'POST','PUT'], // Allowed HTTP methods
+  methods: ['GET', 'POST', 'PUT'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
 };
 
 app.use(cors(corsOptions));
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000;
 
+app.use(express.json());
 
-app.use(express.json())
+// Calling Database function
+connect();
 
-//calling Database function
-require('./config/database').connect()
+// Route importing and mounting
+// Use AdminJS Router
+app.use(admin.options.rootPath, adminRouter);
 
-//route importing and mounting
-const user = require('./routes/otpRoute')
-const auth = require('./routes/authRoute')
-app.use('/api/v1', auth)
-app.use('/api/v1', user)
+// Mount routes
+app.use('/api/v1', authRoutes);
+app.use('/api/v1', userRoutes);
 
-
-app.listen(PORT, ()=>{
-    console.log("Server Started")
-})
+app.listen(PORT, () => {
+  console.log('Server Started');
+});

@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
 const orderSchema = new mongoose.Schema({
   user: { type: Object, required: true }, // Reference to User
   orderDetails: {
-    bindingtype: Object,
-    gsm: Object,
-    papersize: Object,
-    printcolour: Object,
+    bindingtype: { type: Object, required: true },
+    gsm: { type: Object, required: true },
+    papersize: { type: Object, required: true },
+    printcolour: { type: Object, required: true },
   },
   address: { type: Object, required: true }, // Store the full address object
   service: { type: String, required: true }, // Store the service name
@@ -14,4 +14,5 @@ const orderSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model("Order", orderSchema);
+const Order = mongoose.model('Order', orderSchema);
+export default Order;

@@ -1,7 +1,10 @@
 // routes/otpRoutes.js
-const express = require('express');
-const otpController = require('../controllers/otpController');
+import express from 'express';
+import { sendOTP, sendLoginOTP } from '../controllers/otpController.js';
+
 const router = express.Router();
-router.post('/send-otp', otpController.sendOTP);
-router.post('/send-login-otp', otpController.sendLoginOTP);
-module.exports = router;
+
+router.post('/send-otp', sendOTP);
+router.post('/send-login-otp', sendLoginOTP);
+
+export default router;

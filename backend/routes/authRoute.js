@@ -1,19 +1,26 @@
-// routes/authRoutes.js
-const express = require('express');
-const authController = require('../controllers/authController');
-const Service = require('../models/serviceModel');
+import express from 'express';
+import { 
+  signup, 
+  signin, 
+  loginotp, 
+  updateUser, 
+  getAddress, 
+  addAddress, 
+  getServiceById, 
+  getMaterialsByCategory, 
+  newOrder 
+} from '../controllers/authController.js';
+
 const router = express.Router();
 
-router.post('/signup', authController.signup);
-router.post('/signin', authController.signin);
-router.post('/login-otp', authController.loginotp);
-router.put('/update-user', authController.updateUser);
-router.post('/getaddress', authController.getAddress);
-router.post('/addaddress', authController.addAddress);
-router.get("/services/:id", authController.getServiceById);
-router.get("/materials/:id/:category", authController.getMaterialsByCategory);
-router.post("/new-order", authController.newOrder);
+router.post('/signup', signup);
+router.post('/signin', signin);
+router.post('/login-otp', loginotp);
+router.put('/update-user', updateUser);
+router.post('/getaddress', getAddress);
+router.post('/addaddress', addAddress);
+router.get("/services/:id", getServiceById);
+router.get("/materials/:id/:category", getMaterialsByCategory);
+router.post("/new-order", newOrder);
 
-
-  
-module.exports = router;
+export default router;
