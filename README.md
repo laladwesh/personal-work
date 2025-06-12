@@ -46,8 +46,8 @@ MAIL_PASS=your_email_app_password
 
 1. Clone the repository:
     ```
-    git clone <repository-url>
-    cd <project-folder>
+    git clone https://github.com/laladwesh/personal-work
+    cd backend
     ```
 2. Install dependencies:
     ```
@@ -103,6 +103,7 @@ index.js # Main entry point
 
 - Make sure your email credentials are correct and you have enabled "less secure app" or "app passwords" for Gmail if required
 - In production, ensure environment variables and database URIs are secured
+- For frontend README.md please go inside frontend folder , this README.md majorly have server setup instructions
 
 ---
 
