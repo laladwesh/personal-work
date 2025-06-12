@@ -1,5 +1,5 @@
-import React from "react";
-
+// This component displays an address card with radio selection functionality
+// and is used in the address selection section of the checkout process.
 const AddressCard = ({ type, address, phoneNumber, alternatePhoneNumber, selected, onSelect }) => {
   return (
     <div
