@@ -5,6 +5,7 @@ import { admin, adminRouter } from './admin_panel/admin-config.js';
 import { connect } from './config/database.js';
 import userRoutes from './routes/otpRoute.js';
 import authRoutes from './routes/authRoute.js';
+import morgan from 'morgan';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -20,6 +21,7 @@ const corsOptions = {
 
 // Apply CORS middleware to the Express app
 app.use(cors(corsOptions));
+app.use(morgan('dev'));
 
 // Set server port from environment or default to 4000
 const PORT = process.env.PORT || 4000;
