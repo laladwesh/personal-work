@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useOrder } from "../context/order";
 import { ToastContainer, toast } from "react-toastify";
@@ -457,7 +457,7 @@ const AddressPage = () => {
           onClick={() => navigate("/payment")}
           className="w-full px-6 py-4 bg-primary text-white text-lg font-bold rounded-lg hover:bg-purple-800 transition"
         >
-        {loading ? "Loading..." : "Next"}
+          {loading ? "Loading..." : "Next"}
         </button>
         <ToastContainer />
       </div>
