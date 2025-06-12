@@ -1,16 +1,16 @@
 import mongoose from 'mongoose';
 
 const orderSchema = new mongoose.Schema({
-  user: { type: Object, required: true }, // Reference to User
+  user: { type: Object, required: true },
   orderDetails: {
     bindingtype: { type: Object, required: true },
     gsm: { type: Object, required: true },
     papersize: { type: Object, required: true },
     printcolour: { type: Object, required: true },
   },
-  address: { type: Object, required: true }, // Store the full address object
-  service: { type: String, required: true }, // Store the service name
-  totalPrice: { type: Number, required: true }, // Total price of the order
+  address: { type: Object, required: true },
+  service: { type: String, required: true },
+  totalPrice: { type: Number, required: true },
   createdAt: { type: Date, default: Date.now },
 });
 
