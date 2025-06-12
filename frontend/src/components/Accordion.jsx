@@ -4,14 +4,13 @@ import { useOrder } from "../context/order";
 const AccordionWithOptions = ({ is, title, category, selected }) => {
   const { order, updateOrder, address } = useOrder();
   const [isOpen, setIsOpen] = useState(is);
-  const [selectedOption, setSelectedOption] = useState(selected || ""); // Use passed selected value or fallback
+  const [selectedOption, setSelectedOption] = useState(selected || ""); 
   const [ddata, setData] = useState([]);
   const [hasFetched, setHasFetched] = useState(false);
 
   const toggleAccordion = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    // Fetch data if not already fetched and if address is available
     if (!hasFetched && address) {
       const fetchData = async () => {
         try {
@@ -25,7 +24,6 @@ const AccordionWithOptions = ({ is, title, category, selected }) => {
           const data = await response.json();
           setData(data.data || []);
 
-          // Use existing selection or set default if no selection exists
           if (data.data && data.data.length > 0) {
             const currentSelection =
               order[category]?.id || selected || data.data[0]._id;
@@ -67,7 +65,6 @@ const AccordionWithOptions = ({ is, title, category, selected }) => {
         isOpen ? "rounded-lg" : "rounded-t-lg border-b-2 border-gray-300"
       }`}
     >
-      {/* Accordion Header */}
       <button
         onClick={toggleAccordion}
         className="flex justify-between items-center w-full text-left py-2"
