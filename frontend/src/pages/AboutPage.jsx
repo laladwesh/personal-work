@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutPage = () => {
   return (
     <div className="px-4 md:px-16 lg:px-28 bg-gray-100 font-montserrat">
@@ -41,12 +39,19 @@ const AboutPage = () => {
           </h2>
           <hr className="border-t-2 border-primary my-4" />
           <div className="space-y-8">
-          <p>
-          We bring extensive experience and talent in Graphic Design, Typography, Color Scanning, Offset Printing, Finishing, Mailing, and Dispatch. From large business enterprises to small startups, we enhance your printing and marketing efforts.
-          </p>
-          <p>
-          We work closely with clients to define the purpose of each project and find the most effective and efficient way to achieve success. We take pride in offering high-quality services with customized pricing to meet your specific needs. Whatever your goals and objectives, we are here to help you achieve them.
-          </p>
+            <p>
+              We bring extensive experience and talent in Graphic Design,
+              Typography, Color Scanning, Offset Printing, Finishing, Mailing,
+              and Dispatch. From large business enterprises to small startups,
+              we enhance your printing and marketing efforts.
+            </p>
+            <p>
+              We work closely with clients to define the purpose of each project
+              and find the most effective and efficient way to achieve success.
+              We take pride in offering high-quality services with customized
+              pricing to meet your specific needs. Whatever your goals and
+              objectives, we are here to help you achieve them.
+            </p>
           </div>
         </div>
         <div className="w-full bg-white shadow-xl rounded-3xl items-center px-6 md:px-12 lg:px-16 py-6 md:py-8 hover:bg-secondary">
@@ -56,10 +61,20 @@ const AboutPage = () => {
           <hr className="border-t-2 border-primary my-4" />
           <div className="space-y-8">
             <p>
-            Our mission is to be a customer-oriented organization that leads through value-added services, leveraging our people, effective communication channels, and technology management. We are dedicated to achieving customer satisfaction and empowering our employees, driving innovation and excellence.
+              Our mission is to be a customer-oriented organization that leads
+              through value-added services, leveraging our people, effective
+              communication channels, and technology management. We are
+              dedicated to achieving customer satisfaction and empowering our
+              employees, driving innovation and excellence.
             </p>
             <p>
-            Our vision is to collaborate with our customers to help them achieve their goals, ensuring mutual success. Guided by principles of honesty, integrity, dedication, and commitment, we prioritize dignity and respect in every interaction with customers and suppliers. Our success is intrinsically linked to the success of our clients, and together, we strive for excellence and innovation in everything we do.
+              Our vision is to collaborate with our customers to help them
+              achieve their goals, ensuring mutual success. Guided by principles
+              of honesty, integrity, dedication, and commitment, we prioritize
+              dignity and respect in every interaction with customers and
+              suppliers. Our success is intrinsically linked to the success of
+              our clients, and together, we strive for excellence and innovation
+              in everything we do.
             </p>
           </div>
         </div>
