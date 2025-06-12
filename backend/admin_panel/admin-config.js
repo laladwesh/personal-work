@@ -8,8 +8,8 @@ dotenv.config();
 const ADMINPANELROOT = "/admin";
 
 const DEFAULT_ADMIN = {
-  email: "g.avinash@iitg.ac.in",
-  password: "admin",
+  email: process.env.ADMIN_EMAIL || "",
+  password: process.env.ADMIN_PASSWORD || "",
 };
 
 AdminJS.registerAdapter({
