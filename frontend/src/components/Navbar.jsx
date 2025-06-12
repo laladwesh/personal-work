@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import{ useContext } from "react";
 import { UserContext } from "../context/user";
-
+// import { useOrder } from "../context/order"; 
 const Navbar = () => {
   const userContext = useContext(UserContext); // Access the user context
 
