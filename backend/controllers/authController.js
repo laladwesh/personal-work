@@ -1,6 +1,4 @@
 // controllers/authController.js
-
-
 import bcrypt from 'bcrypt';
 import User from '../models/userModel.js';
 import OTP from '../models/otpModel.js';
@@ -18,7 +16,6 @@ export const signup = async (req, res) => {
         message: 'Email and OTP are required',
       });
     }
-
     // Check if the user exists
     const user = await User.findOne({ email });
     if (!user) {
@@ -36,7 +33,6 @@ export const signup = async (req, res) => {
         message: 'Invalid or expired OTP',
       });
     }
-
     // Mark the user as verified
     user.isVerified = true;
     await user.save();
@@ -325,7 +321,6 @@ export const getMaterialsByCategory = async (req, res) => {
   try {
     const { id, category } = req.params;
 
-    // Normalize category name (e.g., "printcolour" to "Print Colour")
     const formattedCategory = category
       .toLowerCase() // Ensure it's lowercase
       .replace(/(^\w|\s\w)/g, (c) => c.toUpperCase()); // Capitalize first letter of each word
