@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as MyIcon1 } from '../../assets/group1.svg';
 import { ReactComponent as MyIcon2 } from '../../assets/group2.svg';
 
