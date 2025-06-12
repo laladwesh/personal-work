@@ -1,5 +1,3 @@
-import React from "react";
-
 const ContactPage = () => {
   return (
     <div className="px-4 md:px-16 lg:px-28 bg-gray-100 font-montserrat">
@@ -167,7 +165,8 @@ const ContactPage = () => {
               </svg>
 
               <p className="text-primary w-5/6 font-medium">
-              Kh. No. 40, Ground Floor,  Ramesh Tyagi Colony, Jharoda Mazra, Burari,  Delhi-110084
+                Kh. No. 40, Ground Floor, Ramesh Tyagi Colony, Jharoda Mazra,
+                Burari, Delhi-110084
               </p>
             </div>
             <div className="flex space-x-2 items-center mb-4">
