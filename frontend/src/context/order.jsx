@@ -17,15 +17,25 @@ export const OrderProvider = ({ children }) => {
       return updatedOrder;
     });
   };
-  const[address,setAddress]=useState(null);
-  const[ordAddress,setOrdAddress]=useState(null);
+  const [address, setAddress] = useState(null);
+  const [ordAddress, setOrdAddress] = useState(null);
   useEffect(() => {
     // Save order state to localStorage whenever it changes
     localStorage.setItem("order", JSON.stringify(order));
   }, [order]);
 
   return (
-    <OrderContext.Provider value={{ order, updateOrder , setOrder , address , setAddress , ordAddress , setOrdAddress }}>
+    <OrderContext.Provider
+      value={{
+        order,
+        updateOrder,
+        setOrder,
+        address,
+        setAddress,
+        ordAddress,
+        setOrdAddress,
+      }}
+    >
       {children}
     </OrderContext.Provider>
   );
