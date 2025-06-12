@@ -1,4 +1,3 @@
-import React from "react";
 import { useOrder } from "../context/order";
 import AccordionWithOptions from "../components/Accordion";
 import { useLocation, useNavigate } from "react-router-dom";
