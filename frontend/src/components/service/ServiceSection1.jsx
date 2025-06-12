@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,7 +16,7 @@ const settings = {
 };
 
 const ServiceSection1 = ({onKnowMoreClick}) => {
-  const { id } = useParams(); // Extract the dynamic part from the URL
+  const { id } = useParams();
   const [slides, setSlides] = useState([]);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ServiceSection1 = ({onKnowMoreClick}) => {
           throw new Error("Failed to fetch slides");
         }
         const data = await response.json();
-        setSlides(data.slides); // Assuming the backend returns a `slides` array
+        setSlides(data.slides);
       } catch (error) {
         console.error("Error fetching slides:", error);
       }
@@ -37,7 +37,7 @@ const ServiceSection1 = ({onKnowMoreClick}) => {
   }, [id]);
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/price"); // Redirect to PricePage
+    navigate("/price"); 
   }
   return (
     <div className="px-4 md:px-16 lg:px-28 bg-gray-100 gap-y-8 gap-x-8 font-montserrat flex flex-col lg:flex-row h-auto lg:h-[85vh]">
