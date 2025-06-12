@@ -1,5 +1,3 @@
-import React from "react";
-
 const OrderCard = ({ service, id, date }) => {
   return (
     <div className="flex flex-col w-full mt-10 gap-8">
