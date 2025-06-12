@@ -1,5 +1,4 @@
-import React from "react";
-
+// Description: This component renders a section with multiple offer cards, each containing an image and a button to view details.
 const OfferCards = () => {
   return (
     <div className="px-4 md:px-16 lg:px-16 mt-8 bg-gray-100">
