@@ -9,7 +9,7 @@ export const connect = () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(() => console.log('DB Connected Successfully✅'))
+    .then(() => console.log('DB Connected Successfully'))
     .catch((error) => {
       console.error('This error occurred:', error);
       process.exit(1);
