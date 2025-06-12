@@ -1,5 +1,4 @@
-import React from "react";
-
+// Footer component for the application
 const Footer = () => {
   return (
     <div className="px-4 sm:px-8 md:px-16 lg:px-28 mt-6 bg-gray-100">
