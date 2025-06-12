@@ -1,4 +1,3 @@
-import React from "react";
 import AccordionWithOptions from "../Accordion";
 import { useNavigate } from "react-router-dom";
 import { useOrder } from "../../context/order";
@@ -25,30 +24,30 @@ const ServiceSection3b = () => {
         <div className="flex flex-col lg:flex-row justify-center gap-x-7 mt-8">
           {/* Accordion Section */}
           <div className="w-full flex-grow">
-          <AccordionWithOptions
-  is={true}
-  title="Print Colour"
-  category="printcolour"
-  selected={order.order?.printcolour?.id}
-/>
-<AccordionWithOptions
-  is={false}
-  title="Paper Size"
-  category="papersize"
-  selected={order.order?.papersize?.id}
-/>
-<AccordionWithOptions
-  is={false}
-  title="GSM"
-  category="gsm"
-  selected={order.order?.gsm?.id}
-/>
-<AccordionWithOptions
-  is={false}
-  title="Binding Type"
-  category="bindingtype"
-  selected={order.order?.bindingtype?.id}
-/>
+            <AccordionWithOptions
+              is={true}
+              title="Print Colour"
+              category="printcolour"
+              selected={order.order?.printcolour?.id}
+            />
+            <AccordionWithOptions
+              is={false}
+              title="Paper Size"
+              category="papersize"
+              selected={order.order?.papersize?.id}
+            />
+            <AccordionWithOptions
+              is={false}
+              title="GSM"
+              category="gsm"
+              selected={order.order?.gsm?.id}
+            />
+            <AccordionWithOptions
+              is={false}
+              title="Binding Type"
+              category="bindingtype"
+              selected={order.order?.bindingtype?.id}
+            />
           </div>
 
           {/* Summary & Button Section */}
@@ -61,7 +60,9 @@ const ServiceSection3b = () => {
                   <ul className="space-y-2">
                     {Object.entries(order.order).map(([key, value]) => (
                       <li className="flex justify-between" key={key}>
-                        <span>{key.charAt(0).toUpperCase() + key.slice(1)}</span>
+                        <span>
+                          {key.charAt(0).toUpperCase() + key.slice(1)}
+                        </span>
                         <span>${value.price}</span>
                       </li>
                     ))}
