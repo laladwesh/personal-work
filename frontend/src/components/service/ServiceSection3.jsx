@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import AccordionWithOptions from "../Accordion";
 import { UserContext } from "../../context/user";
 import { useNavigate } from "react-router-dom";
