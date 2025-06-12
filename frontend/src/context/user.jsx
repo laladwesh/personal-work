@@ -9,7 +9,6 @@ export const UserProvider = ({ children }) => {
     return storedUser ? JSON.parse(storedUser) : null;
   });
 
-  // Update localStorage whenever user changes
   useEffect(() => {
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
