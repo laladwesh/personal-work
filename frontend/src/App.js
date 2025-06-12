@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
-//import VerificationPage from "./pages/VerificationPage";
 import PrivateRoute from "./components/PrivateRoute";
 import OrderRoute from "./components/OrderRoute";
 import SignInPage from "./pages/SignInPage";
@@ -46,7 +45,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        
+
         <Route
           path="/price"
           element={
