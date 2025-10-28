@@ -14,7 +14,7 @@ const app = express();
 
 // CORS configuration object for security and cross-origin requests
 const corsOptions = {
-  origin: 'http://localhost:3000', // Frontend origin (update as needed)
+  origin: 'https://personal-work-gamma.vercel.app', // Frontend origin (update as needed)
   methods: ['GET', 'POST', 'PUT'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed request headers
 };
