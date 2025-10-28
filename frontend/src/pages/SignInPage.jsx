@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserContext } from "../context/user";
+import { API_URL } from "../config";
 
 const SignInPage = () => {
   const navigate = useNavigate();
@@ -50,9 +51,7 @@ const SignInPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "http://localhost:4000/api/v1/send-login-otp",
-        {
+      const response = await fetch(`${API_URL}/api/v1/send-login-otp`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -83,7 +82,7 @@ const SignInPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:4000/api/v1/login-otp", {
+      const response = await fetch(`${API_URL}/api/v1/login-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
