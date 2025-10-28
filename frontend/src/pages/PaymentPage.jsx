@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { API_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 import { useOrder } from "../context/order";
 import { UserContext } from "../context/user";
@@ -18,7 +19,7 @@ const PaymentPage = () => {
       };
       console.log(orderData);
       // Send the order data to the backend
-      const response = await fetch("http://localhost:4000/api/v1/new-order", {
+  const response = await fetch(`${API_URL}/api/v1/new-order`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
