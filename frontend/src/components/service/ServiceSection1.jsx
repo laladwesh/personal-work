@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { API_URL } from "../../config";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -22,7 +23,7 @@ const ServiceSection1 = ({onKnowMoreClick}) => {
   useEffect(() => {
     const fetchSlides = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/v1/services/${id}`);
+  const response = await fetch(`${API_URL}/api/v1/services/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch slides");
         }
