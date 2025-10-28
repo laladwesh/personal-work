@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserContext } from "../context/user";
 import AddressCard from "../components/AddressCard";
+import { API_URL } from "../config";
 
 const AddressPage = () => {
   const steps = [
@@ -55,7 +56,7 @@ const AddressPage = () => {
       }
 
       // Make a POST request to the API
-      const response = await fetch("http://localhost:4000/api/v1/getaddress", {
+      const response = await fetch(`${API_URL}/api/v1/getaddress`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -95,16 +96,13 @@ const AddressPage = () => {
         }
 
         // Make a POST request to the API
-        const response = await fetch(
-          "http://localhost:4000/api/v1/getaddress",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email }),
-          }
-        );
+        const response = await fetch(`${API_URL}/api/v1/getaddress`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        });
 
         const data = await response.json();
 
@@ -146,7 +144,7 @@ const AddressPage = () => {
       };
 
       // Make a POST request to save the new address
-      const response = await fetch("http://localhost:4000/api/v1/addaddress", {
+      const response = await fetch(`${API_URL}/api/v1/addaddress`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
