@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { API_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/user";
 import { ToastContainer, toast } from "react-toastify";
@@ -63,7 +64,7 @@ const AccountPage = () => {
     event.preventDefault(); // Prevent page reload
 
     try {
-      const response = await fetch("http://localhost:4000/api/v1/update-user", {
+  const response = await fetch(`${API_URL}/api/v1/update-user`, {
         method: "PUT", // Use PUT or POST based on your backend setup
         headers: {
           "Content-Type": "application/json",
