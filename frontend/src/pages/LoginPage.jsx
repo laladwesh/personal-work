@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../context/user";
+import { API_URL } from "../config";
 
 const LoginPage = () => {
   const userContext = useContext(UserContext);
@@ -60,7 +61,7 @@ const LoginPage = () => {
     setLoading(true);
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:4000/api/v1/send-otp", {
+  const response = await fetch(`${API_URL}/api/v1/send-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +103,7 @@ const LoginPage = () => {
   const handleVerificationSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:4000/api/v1/signup", {
+  const response = await fetch(`${API_URL}/api/v1/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
