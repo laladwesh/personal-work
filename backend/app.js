@@ -35,6 +35,11 @@ connect();
 // AdminJS admin panel route setup
 app.use(admin.options.rootPath, adminRouter);
 
+//api test
+app.get('/', (req, res) => {
+  res.send('API is working properly');
+});
+
 // Mount authentication and OTP-related routes under /api/v1 prefix
 app.use('/api/v1', authRoutes);
 app.use('/api/v1', userRoutes);
