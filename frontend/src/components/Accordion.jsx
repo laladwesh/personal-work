@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { API_URL } from "../config";
 import { useOrder } from "../context/order";
 
 const AccordionWithOptions = ({ is, title, category, selected }) => {
@@ -15,7 +16,7 @@ const AccordionWithOptions = ({ is, title, category, selected }) => {
       const fetchData = async () => {
         try {
           const response = await fetch(
-            `http://localhost:4000/api/v1/materials/${address}/${category}`,
+            `${API_URL}/api/v1/materials/${address}/${category}`,
             {
               method: "GET",
               headers: { "Content-Type": "application/json" },
