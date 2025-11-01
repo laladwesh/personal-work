@@ -10,11 +10,9 @@ const ADMINPANELROOT = process.env.ADMINPANELROOT || "/admin";
 
 // Admin credentials must be set via environment variables
 const DEFAULT_ADMIN = {
-  email: process.env.ADMIN_EMAIL || "g.avinash@iitg.ac.in",
-  password: process.env.ADMIN_PASS || "admin",
+  email: "g.avinash@iitg.ac.in",
+  password: "admin",
 };
-
-
 
 // Log configured admin email presence (don't print password)
 console.log("[admin-config] DEFAULT_ADMIN.email=", DEFAULT_ADMIN.email || "(not set)");
