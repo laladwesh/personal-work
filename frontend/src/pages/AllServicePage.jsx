@@ -9,7 +9,7 @@ const AllServicePage = () => {
   return (
     <div className="px-4 md:px-16 lg:px-28 bg-gray-100 font-montserrat">
       <div className="bg-white shadow-xl rounded-3xl items-center px-6 md:px-12 lg:px-16 py-6 md:py-8">
-        <button className="mb-11" onClick={goBack}>
+        <button className="mb-12" onClick={goBack}>
           <svg
             width="32"
             height="32"
