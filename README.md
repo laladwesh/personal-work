@@ -21,7 +21,7 @@ This is an e-commerce application built for Shivalik Graphics as part of an inte
 - **Database:** MongoDB (with Mongoose ODM)  
 - **Email:** Nodemailer for sending OTP and order confirmation emails  
 - **Admin:** AdminJS  
-- **Frontend:** React Js
+- **Frontend:** REACT JS
 
 ---
 
