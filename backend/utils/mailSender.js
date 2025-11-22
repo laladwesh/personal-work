@@ -1,6 +1,5 @@
 import nodemailer from "nodemailer";
 
-// Asynchronous function to send emails using nodemailer
 const mailSender = async (email, title, body) => {
   try {
     // Create a transporter object using SMTP transport
