@@ -94,7 +94,7 @@ index.js # Main entry point
 
 ## Admin Panel
 
-- The admin dashboard can be accessed at the path set in `admin.options.rootPath` (e.g., `/admin`)
+- The admin dashboard can be accessed at the path set in `admin.options.rootPath` (e.g., `/dbadmin`)
 - Manage users, orders, materials, and services from the panel
 
 ---
